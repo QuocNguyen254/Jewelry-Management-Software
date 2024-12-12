@@ -69,12 +69,14 @@ Create table KHACHHANG
 
 Create table PHIEUDICHVU
 (
-	MaPhieuDichVu int identity (1,1) primary key,
+	MaPhieuDichVu int primary key,
 	MaKhachHang int,
 	MaNhanVien int,
 	MaDichVu int,
 	SoLuong int,
 	DonGia float,
+	TraTruoc float,
+	TinhTrang nvarchar(50),
 	NgayBan date
 )
 
@@ -173,12 +175,12 @@ VALUES
     (N'Nhẫn kim cương', N'cặp', 35),
     (N'Dây chuyền đá quý', N'chiếc', 40);
 
-INSERT INTO PHIEUDICHVU ( MaKhachHang, MaNhanVien, MaDichVu, SoLuong, DonGia, NgayBan)
+INSERT INTO PHIEUDICHVU (MaPhieuDichVu, MaKhachHang, MaNhanVien, MaDichVu, SoLuong, DonGia, TraTruoc, TinhTrang, NgayBan)
 VALUES
-    ( 1, 3, 1, 3, 400000, '2024-08-11'),
-    ( 2, 2, 2, 2, 400000, '2024-08-05'),
-    ( 3, 1, 3, 4, 200000, '2024-10-3'),
-    ( 4, 3, 4, 7, 1000000,'2024-03-09');
+    (1, 1, 3, 1, 3, 400000, 0, N'Chưa thanh toán', '2024-08-11'),
+    (2, 2, 2, 2, 2, 400000, 200000, N'Hoàn thành', '2024-08-05'),
+    (3, 3, 1, 3, 4, 200000, 100000, N'Đang xử lý', '2024-10-3'),
+    (4, 4, 3, 4, 7, 1000000, 500000, N'Hoàn thành', '2024-03-09');
 
 INSERT INTO SANPHAM (TenSanPham, MaLoai, SoLuong, DonGia, TinhTrang)
 VALUES
@@ -234,7 +236,7 @@ BEGIN
 END;
 GO
 
-EXEC Danh_Sach_Nhan_Vien_Theo_ID @MaNhanVien = 1
+EXEC Danh_Sach_Nhan_Vien_Theo_ID  1;
 
 GO
 CREATE PROC USP_Login
@@ -243,4 +245,151 @@ AS
 BEGIN
 	SELECT * FROM NHANVIEN WHERE TaiKhoan = @TaiKhoan And MatKhau = @MatKhau
 END
-Go
+--Go
+
+--NHACUNGCAP
+CREATE PROC Danh_Sach_Nha_Cung_Cap 
+AS 
+BEGIN
+	SELECT * FROM NHACUNGCAP 
+END
+
+EXEC Danh_Sach_Nha_Cung_Cap;
+--PHIEUMUAHANG
+CREATE PROC Danh_Sach_Phieu_Mua_Hang
+AS 
+BEGIN
+	SELECT * FROM PHIEUMUAHANG 
+END
+
+EXEC Danh_Sach_Phieu_Mua_Hang;
+
+--LICHSUKHO
+CREATE PROC Danh_Sach_Lich_Su_Kho 
+AS 
+BEGIN
+	SELECT * FROM LICHSUKHO
+END
+
+EXEC Danh_Sach_Lich_Su_Kho;
+
+--SANPHAM
+CREATE PROC Danh_Sach_San_Pham
+AS 
+BEGIN
+	SELECT * FROM SANPHAM 
+END
+
+EXEC Danh_Sach_San_Pham;
+
+--LOAISANPHAM
+CREATE PROC Danh_Sach_Loai_San_Pham
+AS 
+BEGIN
+	SELECT * FROM LOAISANPHAM 
+END
+
+EXEC Danh_Sach_Loai_San_Pham;
+
+--PHIEUBANHANG
+CREATE PROC Danh_Sach_Phieu_Ban_Hang
+AS 
+BEGIN
+	SELECT * FROM PHIEUBANHANG
+END
+
+EXEC Danh_Sach_Phieu_Ban_Hang;
+
+--KHACHHANG
+
+CREATE PROC Danh_Sach_Khach_Hang
+AS 
+BEGIN
+	SELECT * FROM KHACHHANG
+END
+
+EXEC Danh_Sach_Khach_Hang;
+
+--NHANVIEN
+CREATE PROC Danh_Sach_Nhan_Vien
+AS 
+BEGIN
+	SELECT * FROM NHANVIEN
+END
+
+EXEC  Danh_Sach_Nhan_Vien;
+
+--PHIEUDICHVU
+CREATE PROC Danh_Sach_Phieu_Dich_Vu
+AS 
+BEGIN
+	SELECT * FROM PHIEUDICHVU
+END
+
+EXEC Danh_Sach_Phieu_Dich_Vu;
+
+
+--LOAIDICHVU
+CREATE PROC Danh_Sach_Loai_Dich_Vu
+AS 
+BEGIN
+	SELECT * FROM LOAIDICHVU
+END
+
+EXEC Danh_Sach_Loai_Dich_Vu;
+
+--SEARCH_FUNCTION
+CREATE PROC Search_Table
+    @TenBang NVARCHAR(50),@ParaJSON NVARCHAR(MAX) -- JSON chứa các cặp {Tên cột, Giá trị}
+AS
+BEGIN
+
+    DECLARE @TenCot NVARCHAR(50), @GiaTri NVARCHAR(50);
+
+    DECLARE @index INT = 0;
+	PRINT @ParaJSON;
+
+
+	DECLARE @sql NVARCHAR(MAX) = N'SELECT * FROM ' + QUOTENAME(@TenBang) +   N' WHERE 1 = 1';
+
+    WHILE 1 = 1
+    BEGIN
+
+        SELECT 
+            @TenCot = JSON_VALUE(@ParaJSON, '$[' + CAST(@index AS NVARCHAR) + '].TenCot'),
+            @GiaTri = JSON_VALUE(@ParaJSON, '$[' + CAST(@index AS NVARCHAR) + '].GiaTri');
+
+		PRINT @sql + 'SQL:';
+        IF @TenCot IS NULL BREAK;
+
+		IF TRY_CAST(@GiaTri AS INT) IS NOT NULL
+		BEGIN
+
+			SET @sql = @sql + N' AND CAST(' + QUOTENAME(@TenCot) + N' AS NVARCHAR) = ''' + @GiaTri + '''';
+		END
+		ELSE
+		BEGIN
+
+			SET @sql = @sql + N' AND ' + QUOTENAME(@TenCot) + N' = N''' + @GiaTri + N'''';
+		END
+		
+
+
+        SET @index = @index + 1;
+		PRINT @sql + 'SQL:';
+    END;
+
+    -- Thực thi câu lệnh SQL động
+    EXEC sp_executesql @sql;
+END;
+DROP PROCEDURE IF EXISTS Search_Table;
+
+DECLARE @DieuKien NVARCHAR(MAX) = N'[
+	{"TenCot": "SoLuong", "GiaTri": 6},
+	{"TenCot": "TinhTrang", "GiaTri": 1},
+    {"TenCot": "MaSanPham", "GiaTri": 2}
+]';
+EXEC Search_Table 'SANPHAM',@DieuKien;
+
+
+
