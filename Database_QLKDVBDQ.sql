@@ -383,7 +383,7 @@ BEGIN
             @GiaTri = JSON_VALUE(@ParaJSON, '$[' + CAST(@index AS NVARCHAR) + '].GiaTri');
 		PRINT @sql + 'SQL:';
         IF @TenCot IS NULL BREAK;
-		IF @GiaTri IS NOT NULL 
+		IF @GiaTri <> ''
 		BEGIN
 			IF TRY_CAST(@GiaTri AS INT) IS NOT NULL
 			BEGIN
@@ -402,11 +402,11 @@ BEGIN
 END;
 DROP PROCEDURE IF EXISTS Search_Table;
 DECLARE @DieuKien NVARCHAR(MAX) = N'[
-	{"TenCot": "SoLuong", "GiaTri": 6},
-	{"TenCot": "TinhTrang", "GiaTri": 1},
-    {"TenCot": "MaSanPham", "GiaTri": 2}
+	{"TenCot": "MaKhachHang", "GiaTri": "1"},
+	{"TenCot": "SoDienThoai", "GiaTri": "" },
+    {"TenCot": "TenKhachHang", "GiaTri": "" }
 ]';
-EXEC Search_Table 'SANPHAM',@DieuKien;
+EXEC Search_Table 'KHACHHANG',@DieuKien;
 
 --TRIGGER SANPHAM(DONGIA) - PHIEUBANHANG(DONGIA),(THANHTIEN) - LICHSUKHO
 GO
