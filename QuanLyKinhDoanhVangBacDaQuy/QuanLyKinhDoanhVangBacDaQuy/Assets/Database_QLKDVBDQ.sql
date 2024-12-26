@@ -3,7 +3,7 @@ USE QuanLyKinhDoanhVangBacDaQuy
 
 Create table PHIEUMUAHANG
 (
-	MaPhieuMua int identity (1,1) primary key,
+	MaPhieuMua int ,
 	MaNhaCungCap int,
 	MaSanPham int,
 	NgayMua datetime,
@@ -53,7 +53,7 @@ Create table LOAISANPHAM
 
 Create table PHIEUBANHANG
 (
-	MaPhieuBan int identity (1,1) primary key,
+	MaPhieuBan int ,
 	MaKhachHang int,
 	MaNhanVien int,
 	MaSanPham int,
@@ -180,8 +180,12 @@ VALUES
     (N'Dây chuyền đá quý', N'chiếc', 40);
 
 INSERT INTO PHIEUDICHVU (MaPhieuDichVu,MaKhachHang, MaNhanVien, MaDichVu, SoLuong,TraTruoc, TinhTrang, NgayBan)
-VALUES (1,1, 1, 1, 3, 300000, N'Đã giao', '2024-08-11'),
-	   (1,1, 1, 2, 2, 400000, N'Chưa giao', '2024-08-11');
+VALUES (6,1, 1, 1, 3, 300000, N'Đã giao', '2024-08-11 04:52:12.000'),
+	   (6,1, 1, 2, 2, 400000, N'Đã giao', '2024-08-11 04:52:12.000');
+
+INSERT INTO PHIEUDICHVU (MaPhieuDichVu,MaKhachHang, MaNhanVien, MaDichVu, SoLuong,TraTruoc, TinhTrang, NgayBan)
+VALUES (1,1, 1, 3, 1, 10000001, N'Đã giao', '2024-08-11'),
+	   (1,1, 1, 4, 2, 5000001, N'Chưa giao', '2024-08-11');
 
 INSERT INTO PHIEUDICHVU (MaKhachHang, MaNhanVien, MaDichVu, SoLuong,TraTruoc, TinhTrang, NgayBan)
 VALUES (2, 2, 3, 4, 800000, N'Đã giao', '2024-10-3'),
@@ -205,48 +209,20 @@ VALUES
     ( N'Dây chuyền hồng ngọc', 5);
 INSERT INTO SANPHAM (TenSanPham, MaLoai) VALUES ( N'Dây chuyền kim cương nữ', 1);
 
---INSERT INTO PHIEUDICHVU (MaKhachHang, MaNhanVien, MaDichVu, SoLuong,TraTruoc, TinhTrang, NgayBan)
---VALUES
---    (1, 3, 1, 3,  0, N'Đã giao', '2024-08-11'),
---    (2, 2, 2, 2, 200000, N'Chưa giao', '2024-08-05'),
---    (3, 1, 3, 4, 100000, N'Đã giao', '2024-10-3'),
---    (4, 3, 4, 7, 500000, N'Chưa giao', '2024-03-09');
+INSERT INTO PHIEUMUAHANG (MaPhieuMua, MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia) VALUES(2, 1, 1, '2027-10-04', 12,9000000);
+INSERT INTO PHIEUMUAHANG (MaPhieuMua, MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia) VALUES(2, 2, 2, '2027-10-04', 8, 1000000);
+INSERT INTO PHIEUMUAHANG (MaPhieuMua, MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia) VALUES(2, 3, 3, '2027-10-04', 16, 1000000);
+INSERT INTO PHIEUMUAHANG (MaPhieuMua, MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia) VALUES(2, 4, 4, '2027-10-04', 8, 4500000);
+INSERT INTO PHIEUMUAHANG (MaPhieuMua, MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia) VALUES(2, 4, 5, '2027-10-04', 6, 5000000);
+INSERT INTO PHIEUMUAHANG (MaPhieuMua, MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia) VALUES(2, 1, 6, '2027-10-04', 12,10000000);
 
---INSERT INTO SANPHAM (TenSanPham, MaLoai, SoLuong, DonGia)
---VALUES
---    ( N'Dây chuyền kim cương nam', 1, 11, 10000000, 1),
---    ( N'Nhẫn vàng nam', 2, 6, 2000000, 1),
---    ( N'Vòng tay vàng nam', 3, 18, 2000000, 1),
---    ( N'Nhẫn kim cương nữ', 4, 6, 5000000, 1),
---    ( N'Dây chuyền hồng ngọc', 5, 6, 6000000, 0);
---INSERT INTO PHIEUMUAHANG ( MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia)
---VALUES
---    ( 1, 1, '2023-08-02', 12, 9000000);
---    ( 2, 2, '2023-10-12', 8, 1400000),
---    ( 3, 3, '2023-10-01', 16, 1000000),
---    ( 4, 4, '2023-08-20', 8, 4500000),
---    ( 4, 5, '2023-06-23', 6, 5000000);
+INSERT INTO PHIEUBANHANG(MaPhieuBan,MaKhachHang, MaNhanVien, MaSanPham, SoLuong, NgayBan) VALUES (1, 1, 3, 1, 12, '2026-07-10');
+INSERT INTO PHIEUBANHANG(MaPhieuBan,MaKhachHang, MaNhanVien, MaSanPham, SoLuong, NgayBan) VALUES (1, 2, 2, 2, 8,  '2026-07-10');
+INSERT INTO PHIEUBANHANG(MaPhieuBan,MaKhachHang, MaNhanVien, MaSanPham, SoLuong, NgayBan) VALUES (1, 3, 1, 3, 16, '2026-07-10');
+INSERT INTO PHIEUBANHANG(MaPhieuBan,MaKhachHang, MaNhanVien, MaSanPham, SoLuong, NgayBan) VALUES (1, 4, 3, 4, 8,  '2026-07-10');
+INSERT INTO PHIEUBANHANG(MaPhieuBan,MaKhachHang, MaNhanVien, MaSanPham, SoLuong, NgayBan) VALUES (1, 4, 3, 5, 6,  '2026-07-10');
+INSERT INTO PHIEUBANHANG(MaPhieuBan,MaKhachHang, MaNhanVien, MaSanPham, SoLuong, NgayBan) VALUES (1, 4, 3, 6, 12,  '2026-07-10');
 
-INSERT INTO PHIEUMUAHANG ( MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia) VALUES( 1, 1, '2028-10-02', 12,9000000);
-INSERT INTO PHIEUMUAHANG ( MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia) VALUES( 2, 2, '2028-10-02', 8, 1000000);
-INSERT INTO PHIEUMUAHANG ( MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia) VALUES( 3, 3, '2028-10-02', 16, 1000000);
-INSERT INTO PHIEUMUAHANG ( MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia) VALUES( 4, 4, '2028-10-02', 8, 4500000);
-INSERT INTO PHIEUMUAHANG ( MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia) VALUES( 4, 5, '2028-10-02', 6, 5000000);
-INSERT INTO PHIEUMUAHANG ( MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia) VALUES( 1, 6, '2028-10-02', 12,10000000);
-
-INSERT INTO PHIEUBANHANG(MaKhachHang, MaNhanVien, MaSanPham, SoLuong, NgayBan) VALUES ( 1, 3, 1, 6, '2029-07-10');
-INSERT INTO PHIEUBANHANG(MaKhachHang, MaNhanVien, MaSanPham, SoLuong, NgayBan) VALUES ( 2, 2, 2, 4,  '2029-07-10');
-INSERT INTO PHIEUBANHANG(MaKhachHang, MaNhanVien, MaSanPham, SoLuong, NgayBan) VALUES ( 3, 1, 3, 8, '2029-07-10');
-INSERT INTO PHIEUBANHANG(MaKhachHang, MaNhanVien, MaSanPham, SoLuong, NgayBan) VALUES ( 4, 3, 4, 4,  '2029-07-10');
-INSERT INTO PHIEUBANHANG(MaKhachHang, MaNhanVien, MaSanPham, SoLuong, NgayBan) VALUES ( 4, 3, 5, 3,  '2029-07-10');
-INSERT INTO PHIEUBANHANG(MaKhachHang, MaNhanVien, MaSanPham, SoLuong, NgayBan) VALUES ( 4, 3, 6, 6,  '2029-07-10');
-
---INSERT INTO PHIEUBANHANG( MaKhachHang, MaNhanVien, MaSanPham, SoLuong, NgayBan)
---VALUES
---    ( 1, 3, 1, 2, '2023-09-10'),
---   ( 2, 2, 2, 3, '2023-10-05'),
---    ( 3, 1, 3, 2, '2023-09-20'),
---    ( 4, 3, 4, 1, '2023-09-25');
 
 DELETE FROM PHIEUBANHANG
 DELETE FROM PHIEUDICHVU
@@ -260,6 +236,7 @@ DELETE FROM PHIEUMUAHANG
 DELETE FROM SANPHAM
 DELETE FROM SANPHAM WHERE MaSanPham = 7
 DELETE FROM SANPHAM WHERE MaSanPham = 8 
+DELETE FROM PHIEUMUAHANG WHERE MaPhieuMua = 3
 
 select * from PHIEUBANHANG
 select * from PHIEUDICHVU
@@ -281,148 +258,56 @@ use master
 ALTER DATABASE QuanLyKinhDoanhVangBacDaQuy SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
 DROP DATABASE QuanLyKinhDoanhVangBacDaQuy;
 
-GO
+
 CREATE PROCEDURE Danh_Sach_Nhan_Vien_Theo_ID @MaNhanVien int
 AS
 BEGIN
-    SELECT * FROM NHANVIEN WHERE MaNhanVien = @MaNhanVien;
-END;
-GO
-
-EXEC Danh_Sach_Nhan_Vien_Theo_ID 1
-
-GO
+    SELECT * FROM NHANVIEN WHERE MaNhanVien = @MaNhanVien
+END
+--
 CREATE PROC USP_Login
 @TaiKhoan nvarchar(50), @MatKhau nvarchar(50)
 AS
 BEGIN
 	SELECT * FROM NHANVIEN WHERE TaiKhoan = @TaiKhoan And MatKhau = @MatKhau
 END
-Go
-CREATE PROC Danh_Sach_Nha_Cung_Cap 
-AS 
-BEGIN
-	SELECT * FROM NHACUNGCAP 
-END
-EXEC Danh_Sach_Nha_Cung_Cap
-GO
---PHIEUMUAHANG
-CREATE PROC Danh_Sach_Phieu_Mua_Hang
-AS 
-BEGIN
-	SELECT * FROM PHIEUMUAHANG 
-END
-EXEC Danh_Sach_Phieu_Mua_Hang
---LICHSUKHO
-GO
-CREATE PROC Danh_Sach_Lich_Su_Kho 
-AS 
-BEGIN
-	SELECT * FROM LICHSUKHO
-END
-EXEC Danh_Sach_Lich_Su_Kho;
---SANPHAM
-GO
-CREATE PROC Danh_Sach_San_Pham
-AS 
-BEGIN
-	SELECT * FROM SANPHAM 
-END
-EXEC Danh_Sach_San_Pham;
---LOAISANPHAM
-GO
-CREATE PROC Danh_Sach_Loai_San_Pham
-AS 
-BEGIN
-	SELECT * FROM LOAISANPHAM 
-END
-EXEC Danh_Sach_Loai_San_Pham;
---PHIEUBANHANG
-GO
-CREATE PROC Danh_Sach_Phieu_Ban_Hang
-AS 
-BEGIN
-	SELECT * FROM PHIEUBANHANG
-END
-EXEC Danh_Sach_Phieu_Ban_Hang;
---KHACHHANG
-GO
-CREATE PROC Danh_Sach_Khach_Hang
-AS 
-BEGIN
-	SELECT * FROM KHACHHANG
-END
-EXEC Danh_Sach_Khach_Hang;
---NHANVIEN
-GO
-CREATE PROC Danh_Sach_Nhan_Vien
-AS 
-BEGIN
-	SELECT * FROM NHANVIEN
-END
-EXEC  Danh_Sach_Nhan_Vien;
---PHIEUDICHVU
-GO
-CREATE PROC Danh_Sach_Phieu_Dich_Vu
-AS 
-BEGIN
-	SELECT * FROM PHIEUDICHVU
-END
-EXEC Danh_Sach_Phieu_Dich_Vu;
---LOAIDICHVU
-GO
-CREATE PROC Danh_Sach_Loai_Dich_Vu
-AS 
-BEGIN
-	SELECT * FROM LOAIDICHVU
-END
-EXEC Danh_Sach_Loai_Dich_Vu;
+--
 
 --SEARCH_FUNCTION
-GO
 CREATE PROC Search_Table
     @TenBang NVARCHAR(50),@ParaJSON NVARCHAR(MAX) -- JSON chứa các cặp {Tên cột, Giá trị}
 AS
 BEGIN
-    DECLARE @TenCot NVARCHAR(50), @GiaTri NVARCHAR(50);
-    DECLARE @index INT = 0;
-	PRINT @ParaJSON;
-	DECLARE @sql NVARCHAR(MAX) = N'SELECT * FROM ' + QUOTENAME(@TenBang) +   N' WHERE 1 = 1';
+    DECLARE @TenCot NVARCHAR(50), @GiaTri NVARCHAR(50)
+    DECLARE @index INT = 0
+	PRINT @ParaJSON
+	DECLARE @sql NVARCHAR(MAX) = N'SELECT * FROM ' + QUOTENAME(@TenBang) +   N' WHERE 1 = 1'
     WHILE 1 = 1
     BEGIN
         SELECT 
             @TenCot = JSON_VALUE(@ParaJSON, '$[' + CAST(@index AS NVARCHAR) + '].TenCot'),
-            @GiaTri = JSON_VALUE(@ParaJSON, '$[' + CAST(@index AS NVARCHAR) + '].GiaTri');
-		PRINT @sql + 'SQL:';
-        IF @TenCot IS NULL BREAK;
+            @GiaTri = JSON_VALUE(@ParaJSON, '$[' + CAST(@index AS NVARCHAR) + '].GiaTri')
+		PRINT @sql + 'SQL:'
+        IF @TenCot IS NULL BREAK
 		IF @GiaTri <> ''
 		BEGIN
 			IF TRY_CAST(@GiaTri AS INT) IS NOT NULL
 			BEGIN
-				SET @sql = @sql + N' AND CAST(' + QUOTENAME(@TenCot) + N' AS NVARCHAR) = ''' + @GiaTri + '''';
+				SET @sql = @sql + N' AND CAST(' + QUOTENAME(@TenCot) + N' AS NVARCHAR) = ''' + @GiaTri + ''''
 			END
 			ELSE
 			BEGIN
-				SET @sql = @sql + N' AND ' + QUOTENAME(@TenCot) + N' = N''' + @GiaTri + N'''';
+				SET @sql = @sql + N' AND ' + QUOTENAME(@TenCot) + N' = N''' + @GiaTri + N''''
 			END
 		END
-        SET @index = @index + 1;
-		PRINT @sql + 'SQL:';
-    END;
+        SET @index = @index + 1
+		PRINT @sql + 'SQL:'
+    END
     -- Thực thi câu lệnh SQL động
-    EXEC sp_executesql @sql;
-END;
-DROP PROCEDURE IF EXISTS Search_Table;
-DECLARE @DieuKien NVARCHAR(MAX) = N'[
-	{"TenCot": "MaKhachHang", "GiaTri": "1"},
-	{"TenCot": "SoDienThoai", "GiaTri": "" },
-    {"TenCot": "TenKhachHang", "GiaTri": "" }
-]';
-EXEC Search_Table 'KHACHHANG',@DieuKien;
-
+    EXEC sp_executesql @sql
+END
 --SHOW_FUNCTION
 --PHIEUDICHVU
-SELECT * FROM PHIEUDICHVU
 CREATE PROC Show_Phieu_Dich_Vu
 AS 
 BEGIN
@@ -495,21 +380,30 @@ FROM
 		WHERE BCDV1.BCDV1MaPhieu = BCDV2.BCDV2MaPhieu
 	) AS BCDV3,KHACHHANG KH,PHIEUDICHVU PDV
 WHERE BCDV3.BCDV1MaPhieu = PDV.MaPhieuDichVu AND PDV.MaKhachHang = KH.MaKhachHang
-END;
+END
 
-
-
-
-
-
-
-EXEC Show_Phieu_Dich_Vu;
-DROP PROC Show_Phieu_Dich_Vu;
 --LICHSUKHO
 CREATE PROC Show_Lich_Su_Kho
-@Thang int
+@Thang int,@Nam int
 AS BEGIN
-	SELECT BCTK.MaSanPham AS [Mã sản phẩm] ,SP.TenSanPham AS [Tên sản phẩm],BCTK.[Tồn đầu],BCTK.[Số lượng mua vào],BCTK.[Số lượng bán ra],BCTK.[Tồn cuối],LSP.DonViTinh AS [Đơn vị tính]
+	SELECT BCTK.MaSanPham AS [Mã sản phẩm] ,SP.TenSanPham AS [Tên sản phẩm],
+	CASE
+	 WHEN BCTK.[Tồn đầu] IS NOT NULL THEN BCTK.[Tồn đầu] 
+	 ELSE 0
+	END AS [Tồn đầu],
+	CASE
+	 WHEN BCTK.[Số lượng mua vào] IS NOT NULL THEN BCTK.[Số lượng mua vào]
+	 ELSE 0
+	END AS [Số lượng mua vào],
+	CASE
+	 WHEN BCTK.[Số lượng bán ra] IS NOT NULL THEN BCTK.[Số lượng bán ra]
+	 ELSE 0
+	END AS [Số lượng bán ra],
+	CASE
+	 WHEN BCTK.[Tồn cuối] IS NOT NULL THEN BCTK.[Tồn cuối]
+	 ELSE 0
+	END AS [Tồn cuối],
+	LSP.DonViTinh AS [Đơn vị tính]
 	FROM 
 	(
 		SELECT LSK.MaSanPham,
@@ -519,19 +413,19 @@ AS BEGIN
 			WHERE LSK1.Ngay = (
 							SELECT MIN(LSK2.Ngay) 
 							FROM LICHSUKHO LSK2
-							WHERE LSK2.MaSanPham = LSK1.MaSanPham AND MONTH(LSK2.Ngay) = @Thang 
+							WHERE LSK2.MaSanPham = LSK1.MaSanPham AND MONTH(LSK2.Ngay) = @Thang AND YEAR(LSK2.Ngay) = @Nam
 							)
 				 AND LSK1.MaSanPham = LSK.MaSanPham 
 		) as [Tồn đầu],
 		(
 			SELECT SUM(LSK1.SoLuongSau - LSK1.SoLuongTruoc)
 			FROM LICHSUKHO LSK1
-			WHERE LSK1.MaSanPham = LSK.MaSanPham AND LSK1.LoaiGiaoDich = 'Mua' AND MONTH(LSK1.Ngay) = @Thang 
+			WHERE LSK1.MaSanPham = LSK.MaSanPham AND LSK1.LoaiGiaoDich = 'Mua' AND MONTH(LSK1.Ngay) = @Thang AND YEAR(LSK1.Ngay) = @Nam
 		) as [Số lượng mua vào],
 		(
 			SELECT SUM(LSK1.SoLuongTruoc - LSK1.SoLuongSau)
 			FROM LICHSUKHO LSK1
-			WHERE LSK1.MaSanPham = LSK.MaSanPham AND LSK1.LoaiGiaoDich = N'Bán' AND MONTH(LSK1.Ngay) = @Thang 
+			WHERE LSK1.MaSanPham = LSK.MaSanPham AND LSK1.LoaiGiaoDich = N'Bán' AND MONTH(LSK1.Ngay) = @Thang AND YEAR(LSK1.Ngay) = @Nam
 		) as [Số lượng bán ra],
 		(
 			SELECT LSK1.SoLuongSau		
@@ -539,7 +433,7 @@ AS BEGIN
 			WHERE LSK1.Ngay = (
 							SELECT MAX(LSK2.Ngay) 
 							FROM LICHSUKHO LSK2
-							WHERE LSK2.MaSanPham = LSK1.MaSanPham AND MONTH(LSK2.Ngay) = 10 
+							WHERE LSK2.MaSanPham = LSK1.MaSanPham AND MONTH(LSK2.Ngay) = @Thang AND YEAR(LSK2.Ngay) = @Nam
 							)
 				 AND LSK1.MaSanPham = LSK.MaSanPham
 		) as [Tồn cuối]
@@ -549,11 +443,79 @@ AS BEGIN
 	WHERE BCTK.MaSanPham = SP.MaSanPham  AND SP.MaLoai = LSP.MaLoaiSP
 
 END
-
-EXEC Show_Lich_Su_Kho @Thang = 10
 DROP PROC Show_Lich_Su_Kho
+--THANHTOAN-PHIEUMUAHANG
+--SANPHAM
+CREATE PROC Thanh_Toan_Phieu_Mua_Hang
+@MaSanPham int
+AS
+BEGIN
+	SELECT  SP.TenSanPham as [Tên sản phẩm],LSP.TenLoaiSanPham as [Loại sản phẩm],
+	LSP.DonViTinh as [Đơn vị tính]
+	FROM SANPHAM SP,LOAISANPHAM LSP
+	WHERE SP.MaSanPham = @MaSanPham and SP.MaLoai = LSP.MaLoaiSP
+END
+
+DROP PROC Thanh_Toan_Phieu_Mua_Hang
+--THANHTOAN-PHIEUMUAHANG
+--SANPHAM
+CREATE PROC Thanh_Toan_Phieu_Ban_Hang
+@MaSanPham int
+AS
+BEGIN
+	SELECT  SP.TenSanPham as [Tên sản phẩm],SP.DonGia as [Đơn giá],
+	LSP.DonViTinh as [Đơn vị tính],LSP.TenLoaiSanPham as [Tên loại sản phẩm]
+	FROM SANPHAM SP,LOAISANPHAM LSP
+	WHERE SP.MaSanPham = @MaSanPham and SP.MaLoai = LSP.MaLoaiSP
+END
+
+DROP PROC Thanh_Toan_Phieu_Ban_Hang
+--KHACHHANG
+CREATE PROC Thanh_Toan_Phieu_Ban_Hang_Khach_Hang
+@MaKhachHang int
+AS
+BEGIN
+	SELECT TenKhachHang as [Tên khách hàng],SoDienThoai as [Số điện thoại]
+	FROM KHACHHANG
+	WHERE MaKhachHang = @MaKhachHang
+END
+DROP PROC Thanh_Toan_Phieu_Ban_Hang_Khach_Hang
+--NHANVIEN
+CREATE PROC Thanh_Toan_Phieu_Ban_Hang_Nhan_Vien
+@MaNhanVien int
+AS
+BEGIN
+	SELECT TenNhanVien as [Tên nhân viên]
+	FROM NHANVIEN
+	WHERE MaNhanVien = @MaNhanVien
+END
+DROP PROC Thanh_Toan_Phieu_Ban_Hang_Nhan_Vien
+--NHACUNGCAP
+
+--THANH-TOAN-PHIEUDICHVU
+CREATE PROC Thanh_Toan_Phieu_Dich_Vu
+@MaDichVu int
+AS
+BEGIN
+	SELECT TenLoaiDichVu as [Tên loại dịch vụ],DonGia as [Đơn giá]
+	FROM LOAIDICHVU
+	WHERE MaDichVu = @MaDichVu
+END
+DROP PROC Thanh_Toan_Phieu_Dich_Vu
+--NHACUNGCAP
+CREATE PROC Thanh_Toan_Phieu_Ban_Hang_Khach_hang
+@MaNhaCungCap int
+AS
+BEGIN
+	SELECT TenNhaCungCap as [Tên nhà cung cấp],DiaChi as [Địa chỉ],SoDienThoai as [Số điện thoại]
+	FROM NHACUNGCAP
+	WHERE MaNhaCungCap = @MaNhaCungCap
+END
+DROP PROC Thanh_Toan_Phieu_Mua_Hang_Nha_Cung_Cap
+--SHOW-RECEIPT-ID
+
 --TRIGGER SANPHAM(DONGIA) - PHIEUBANHANG(DONGIA),(THANHTIEN) - LICHSUKHO
-GO
+DROP TRIGGER TG_PHIEUBANHANG_SANPHAM_LICHSUKHO_INSERT
 CREATE TRIGGER TG_PHIEUBANHANG_SANPHAM_LICHSUKHO_INSERT
 ON PHIEUBANHANG
 INSTEAD OF INSERT
@@ -561,12 +523,14 @@ AS
 BEGIN
 	DECLARE @SoLuongBan int;
 	SELECT @SoLuongBan = SoLuong FROM INSERTED I ;
+
 	IF (@SoLuongBan <= 0) BEGIN
 		PRINT 'SO LUONG BAN PHAI LON HON 0'
 	END
 	ELSE BEGIN
-		INSERT INTO PHIEUBANHANG (MaKhachHang, MaNhanVien, MaSanPham, SoLuong,NgayBan, DonGia,ThanhTien)
+		INSERT INTO PHIEUBANHANG (MaPhieuBan,MaKhachHang, MaNhanVien, MaSanPham, SoLuong,NgayBan, DonGia,ThanhTien)
 		SELECT 
+			i.MaPhieuBan,
 			i.MaKhachHang,
 			i.MaNhanVien,
 			i.MaSanPham,
@@ -579,28 +543,22 @@ BEGIN
 			inserted i,SANPHAM SP
 		WHERE i.MaSanPham = SP.MaSanPham;
 		DECLARE @SoLuongMoiNhat int;
-		SELECT @SoLuongMoiNhat = SoLuongMoiNhat.SoLuongSau
-		FROM
-			(	SELECT LSK.MaSanPham,LSK.SoLuongSau
-			FROM LICHSUKHO LSK ,
-				(SELECT MaSanPham,MAX(Ngay) as NgayCapNhatMoiNhat
-				FROM LICHSUKHO
-				GROUP BY MaSanPham) as NgayCapNhat 
-			WHERE LSK.MaSanPham = NgayCapNhat.MaSanPham AND LSK.Ngay = NgayCapNhat.NgayCapNhatMoiNhat
-			) as SoLuongMoiNhat , INSERTED I 
-		WHERE SoLuongMoiNhat.MaSanPham = I.MaSanPham;
+		SELECT @SoLuongMoiNhat = SP.SoLuong
+		FROM SANPHAM SP ,inserted i
+		WHERE i.MaSanPham = SP.MaSanPham
+
 		IF (@SoLuongMoiNhat IS NULL  )
 		BEGIN
 			PRINT 'HẾT HÀNG,KHÔNG THỂ BÁN ĐƯỢC'
 		END
 		ELSE 
 		BEGIN
-			IF (@SoLuongMoiNhat - @SoLuongBan >= 0 )
+			IF (@SoLuongMoiNhat - @SoLuongBan > 0 )
 			BEGIN
 				INSERT INTO LICHSUKHO (MaSanPham,LoaiGiaoDich,Ngay,SoLuongTruoc,SoLuongSau)
 				SELECT 
 					i.MaSanPham,
-					'Bán',
+					N'Bán',
 					i.NgayBan,
 					@SoLuongMoiNhat,
 					@SoLuongMoiNhat - i.SoLuong
@@ -611,6 +569,22 @@ BEGIN
 				FROM SANPHAM SP,INSERTED I
 				WHERE SP.MaSanPham = I.MaSanPham;
 			END
+			ELSE IF (@SoLuongMoiNhat - @SoLuongBan = 0 )
+			BEGIN
+				INSERT INTO LICHSUKHO (MaSanPham,LoaiGiaoDich,Ngay,SoLuongTruoc,SoLuongSau)
+				SELECT 
+					i.MaSanPham,
+					N'Bán',
+					i.NgayBan,
+					@SoLuongMoiNhat,
+					@SoLuongMoiNhat - i.SoLuong
+				FROM
+					inserted i;
+				UPDATE SANPHAM 
+				SET SoLuong = @SoLuongMoiNhat - i.SoLuong,TinhTrang = 0
+				FROM SANPHAM SP,INSERTED I
+				WHERE SP.MaSanPham = I.MaSanPham;
+			END
 			ELSE
 			BEGIN
 				PRINT 'KHÔNG THỂ BÁN QUÁ SỐ LƯỢNG TỒN KHO'
@@ -618,10 +592,8 @@ BEGIN
 		END
 	END
 END;
-DROP TRIGGER TG_PHIEUBANHANG_SANPHAM_LICHSUKHO_INSERT
 --TRIGGER PHIEUMUAHANG(THANHTIEN)-LICHSUKHO (SOLUONGTRUOC,SOLUONGSAU)
-
-GO
+DROP TRIGGER TG_PHIEUMUAHANG_LICHSUKHO_INSERT
 CREATE TRIGGER TG_PHIEUMUAHANG_LICHSUKHO_INSERT
 ON PHIEUMUAHANG
 INSTEAD OF INSERT
@@ -629,12 +601,14 @@ AS
 BEGIN
 	DECLARE @SoLuongMua int;
 	SELECT @SoLuongMua = SoLuong FROM INSERTED I ;
+
 	IF (@SoLuongMua <= 0) BEGIN
 		PRINT 'SỐ LƯỢNG NHẬP VÀO PHẢI LỚN HƠN 0'
 	END
 	ELSE BEGIN
-	   INSERT INTO PHIEUMUAHANG (MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia,ThanhTien)
+	   INSERT INTO PHIEUMUAHANG (MaPhieuMua,MaNhaCungCap, MaSanPham, NgayMua, SoLuong, DonGia,ThanhTien)
 		SELECT 
+			i.MaPhieuMua,
 			i.MaNhaCungCap,
 			i.MaSanPham,
 			i.NgayMua,
@@ -644,22 +618,15 @@ BEGIN
 		FROM
 			inserted i;
 		DECLARE @SoLuongMoiNhat int;
-		SELECT @SoLuongMoiNhat = SoLuongMoiNhat.SoLuongSau
-		FROM
-			(	SELECT LSK.MaSanPham,LSK.SoLuongSau
-			FROM LICHSUKHO LSK ,
-				(SELECT MaSanPham,MAX(Ngay) as NgayCapNhatMoiNhat
-				FROM LICHSUKHO
-				GROUP BY MaSanPham) as NgayCapNhat 
-			WHERE LSK.MaSanPham = NgayCapNhat.MaSanPham AND LSK.Ngay = NgayCapNhat.NgayCapNhatMoiNhat
-			) as SoLuongMoiNhat , INSERTED I 
-		WHERE SoLuongMoiNhat.MaSanPham = I.MaSanPham;
+		SELECT @SoLuongMoiNhat = SP.SoLuong
+		FROM SANPHAM SP,inserted i
+		WHERE SP.MaSanPham = i.MaSanPham;
 		IF (@SoLuongMoiNhat IS NULL)
 		BEGIN
 			INSERT INTO LICHSUKHO (MaSanPham,LoaiGiaoDich,Ngay,SoLuongTruoc,SoLuongSau)
 			SELECT 
 				i.MaSanPham,
-				'Mua',
+				N'Mua',
 				i.NgayMua,
 				0,
 				i.SoLuong
@@ -675,7 +642,7 @@ BEGIN
 			INSERT INTO LICHSUKHO (MaSanPham,LoaiGiaoDich,Ngay,SoLuongTruoc,SoLuongSau)
 			SELECT 
 				i.MaSanPham,
-				'Mua',
+				N'Mua',
 				i.NgayMua,
 				@SoLuongMoiNhat,
 				@SoLuongMoiNhat + i.SoLuong
@@ -689,10 +656,8 @@ BEGIN
 		END
 	END
 END;
-DROP TRIGGER TG_PHIEUMUAHANG_LICHSUKHO_INSERT
---TG-PHIEUDICHVU-INSERT
 
-GO
+--TG-PHIEUDICHVU-INSERT
 CREATE TRIGGER TG_PHIEUDICHVU_INSERT
 ON PHIEUDICHVU
 INSTEAD OF INSERT
@@ -704,14 +669,12 @@ BEGIN
 	WHERE I.MaDichVu = LDV.MaDichVu
 	DECLARE @ThanhTien float = @DonGia*@SoLuong;
 
-	SELECT @MaPhieuMoi = COUNT (DISTINCT MaPhieuDichVu) + 1
-	FROM PHIEUDICHVU
 
 	IF (@TraTruoc >= (50/CAST(100 AS FLOAT))*@ThanhTien)
 	BEGIN
 		INSERT INTO PHIEUDICHVU (MaPhieuDichVu,MaKhachHang,MaNhanVien,MaDichVu,SoLuong,DonGia,TraTruoc,TinhTrang,NgayBan,ThanhTien)
 		SELECT
-			@MaPhieuMoi,
+			i.MaPhieuDichVu,
 			i.MaKhachHang,
 			i.MaNhanVien,
 			i.MaDichVu,
@@ -731,8 +694,6 @@ BEGIN
 END
 DROP TRIGGER TG_PHIEUDICHVU_INSERT
 --TG_LOAISANPHAM_LOINHUAN_UPDATE
-
-GO
 CREATE TRIGGER TG_LOAISANPHAM_LOINHUAN_UPDATE
 ON LOAISANPHAM
 FOR UPDATE
@@ -760,11 +721,9 @@ BEGIN
 	WHERE SANPHAM.MaSanPham = SANPHAMNEW.MaSanPham
 	
 END
-DROP TRIGGER TG_LOAISANPHAM_LOINHUAN_UPDATE
 --TG_SANPHAM_MALOAI_UPDATE
 
-GO
-CREATE TRIGGER TG_SANPHAM_MALOAI_UPDATE
+CREATE TRIGGER TG_SANPHAM_MALOAI_SOLUONG_UPDATE
 ON SANPHAM
 FOR UPDATE
 AS
@@ -787,8 +746,53 @@ BEGIN
 																	  )
 	) AS DonGiaMoi,SANPHAM 
 	WHERE DonGiaMoi.MaSanPham = SANPHAM.MaSanPham
+
+	DECLARE @SoLuongMoi int;
+	SELECT @SoLuongMoi = SoLuong
+	FROM INSERTED
+
+	IF (@SoLuongMoi = 0)
+	BEGIN
+		UPDATE
+		SANPHAM SET TinhTrang = 0
+		FROM SANPHAM SP,INSERTED I
+		WHERE SP.MaSanPham = I.MaSanPham
+
+	END
+	ELSE IF (@SoLuongMoi < 0)
+	BEGIN
+		PRINT 'SO LUONG MOI KHONG HOP LE'
+
+	END
 END
+DROP TRIGGER TG_SANPHAM_MALOAI_SOLUONG_UPDATE
+--TG_SANPHAM_SOLUONG_UPDATE
+
+DROP TRIGGER TG_SANPHAM_SOLUONG_UPDATE
+--EXEC-PROCEDURE
+EXEC Danh_Sach_Nhan_Vien_Theo_ID 1
+
+DECLARE @DieuKien NVARCHAR(MAX) = N'[
+	{"TenCot": "MaKhachHang", "GiaTri": "1"},
+	{"TenCot": "SoDienThoai", "GiaTri": "" },
+    {"TenCot": "TenKhachHang", "GiaTri": "" }
+]';
+EXEC Search_Table 'KHACHHANG',@DieuKien;
+EXEC Show_Phieu_Dich_Vu;
+EXEC Show_Lich_Su_Kho @Thang = 10
+EXEC Thanh_Toan_Phieu_Mua_Hang_Nha_Cung_Cap @MaNhaCungCap = 1
+
+--DROP-TRIGGER
+DROP PROCEDURE IF EXISTS Search_Table;
+DROP PROC Show_Phieu_Dich_Vu;
+DROP PROC Show_Lich_Su_Kho
+DROP PROC Thanh_Toan_Phieu_Mua_Hang_Nha_Cung_Cap 
+DROP TRIGGER TG_PHIEUBANHANG_SANPHAM_LICHSUKHO_INSERT
+DROP TRIGGER TG_PHIEUMUAHANG_LICHSUKHO_INSERT
+DROP TRIGGER TG_PHIEUDICHVU_INSERT
+DROP TRIGGER TG_LOAISANPHAM_LOINHUAN_UPDATE
 DROP TRIGGER TG_SANPHAM_MALOAI_UPDATE
+
 DECLARE @sql NVARCHAR(MAX) = '';
 -- Tạo danh sách các câu lệnh DROP TRIGGER cho tất cả các trigger
 SELECT @sql = @sql + 'DROP TRIGGER IF EXISTS ' + QUOTENAME(t.name) + ';' + CHAR(13)
@@ -796,4 +800,7 @@ FROM sys.triggers t
 WHERE t.is_ms_shipped = 0; -- Chỉ xóa các trigger người dùng tạo, không xóa trigger hệ thống
 -- Thực thi câu lệnh DROP TRIGGER
 EXEC sp_executesql @sql;
+
+
+
 

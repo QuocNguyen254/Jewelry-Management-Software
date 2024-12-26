@@ -2,27 +2,33 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyKinhDoanhVangBacDaQuy.DAO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanLyKinhDoanhVangBacDaQuy
 {
     public partial class FormInventory : Form
     {
         private string month;
+        private string year;
         public FormInventory()
         {
             InitializeComponent();
             for (int i = 1; i <= 12; i++)
             {
-                comboBox1.Items.Add(i.ToString()); 
+                comboBox1.Items.Add(i.ToString());
             }
-
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            DateTime date = DateTime.Now;
+            for (int i = date.Year - 10; i <= date.Year + 10; i++)
+            {
+                comboBox2.Items.Add(i.ToString());
+            }
 
         }
 
@@ -32,12 +38,12 @@ namespace QuanLyKinhDoanhVangBacDaQuy
         }
         void LoadInventory()
         {
-          
-            string query = "EXEC Show_Lich_Su_Kho @Thang";
+
+            string query = "EXEC Show_Lich_Su_Kho @Thang , @Nam";
 
             DataProvider provider = new DataProvider();
 
-            dataGridView1.DataSource = provider.ExecuteQuery(query, new object[] {month});
+            dataGridView1.DataSource = provider.ExecuteQuery(query, new object[] { month , year});
 
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
@@ -52,9 +58,19 @@ namespace QuanLyKinhDoanhVangBacDaQuy
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             month = comboBox1.SelectedItem.ToString();
-            LoadInventory();
+            if (comboBox2.Text != null && comboBox2.Text != "")
+            {
+                LoadInventory();
+            }
+        }
 
-
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            year = comboBox2.SelectedItem.ToString();
+            if (comboBox1.Text != null && comboBox1.Text != "")
+            {
+                LoadInventory();
+            }
         }
     }
 }

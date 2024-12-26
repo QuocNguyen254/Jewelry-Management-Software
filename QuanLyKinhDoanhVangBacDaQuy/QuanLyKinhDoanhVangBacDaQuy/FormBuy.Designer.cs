@@ -40,6 +40,10 @@
             textBox4 = new TextBox();
             dataGridView2 = new DataGridView();
             panel2 = new Panel();
+            label16 = new Label();
+            textBox10 = new TextBox();
+            comboBox2 = new ComboBox();
+            label14 = new Label();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -60,6 +64,8 @@
             comboBox1 = new ComboBox();
             label3 = new Label();
             panel4 = new Panel();
+            dataGridView3 = new DataGridView();
+            label15 = new Label();
             label1 = new Label();
             dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
@@ -68,6 +74,7 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -123,8 +130,10 @@
             // 
             // textBox9
             // 
+            textBox9.BackColor = SystemColors.Window;
             textBox9.Location = new Point(250, 643);
             textBox9.Name = "textBox9";
+            textBox9.ReadOnly = true;
             textBox9.Size = new Size(293, 31);
             textBox9.TabIndex = 26;
             // 
@@ -140,8 +149,10 @@
             // 
             // textBox8
             // 
+            textBox8.BackColor = SystemColors.Window;
             textBox8.Location = new Point(250, 565);
             textBox8.Name = "textBox8";
+            textBox8.ReadOnly = true;
             textBox8.Size = new Size(293, 31);
             textBox8.TabIndex = 24;
             // 
@@ -150,12 +161,13 @@
             button4.BackColor = Color.FromArgb(140, 0, 200);
             button4.Font = new Font("Microsoft Sans Serif", 12F);
             button4.ForeColor = SystemColors.Window;
-            button4.Location = new Point(118, 818);
+            button4.Location = new Point(118, 872);
             button4.Name = "button4";
             button4.Size = new Size(439, 50);
             button4.TabIndex = 22;
             button4.Text = "Thanh toán";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label8
             // 
@@ -169,16 +181,21 @@
             // 
             // textBox4
             // 
+            textBox4.BackColor = SystemColors.Window;
             textBox4.Location = new Point(250, 733);
             textBox4.Name = "textBox4";
+            textBox4.ReadOnly = true;
             textBox4.Size = new Size(293, 31);
             textBox4.TabIndex = 11;
             // 
             // dataGridView2
             // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(13, 63);
             dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersWidth = 62;
             dataGridView2.Size = new Size(602, 395);
             dataGridView2.TabIndex = 1;
@@ -186,6 +203,10 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(label16);
+            panel2.Controls.Add(textBox10);
+            panel2.Controls.Add(comboBox2);
+            panel2.Controls.Add(label14);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
@@ -210,47 +231,89 @@
             panel2.Size = new Size(752, 454);
             panel2.TabIndex = 3;
             // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Microsoft Sans Serif", 12F);
+            label16.Location = new Point(15, 172);
+            label16.Name = "label16";
+            label16.Size = new Size(169, 29);
+            label16.TabIndex = 26;
+            label16.Text = "Loại sản phẩm";
+            // 
+            // textBox10
+            // 
+            textBox10.BackColor = SystemColors.Window;
+            textBox10.Location = new Point(184, 173);
+            textBox10.Name = "textBox10";
+            textBox10.ReadOnly = true;
+            textBox10.Size = new Size(141, 31);
+            textBox10.TabIndex = 25;
+            // 
+            // comboBox2
+            // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(552, 101);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(179, 33);
+            comboBox2.TabIndex = 24;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Microsoft Sans Serif", 12F);
+            label14.Location = new Point(342, 104);
+            label14.Name = "label14";
+            label14.Size = new Size(194, 29);
+            label14.TabIndex = 23;
+            label14.Text = "Mã nhà cung cấp";
+            // 
             // button3
             // 
             button3.BackColor = Color.FromArgb(140, 0, 200);
             button3.Font = new Font("Microsoft Sans Serif", 12F);
             button3.ForeColor = SystemColors.Window;
-            button3.Location = new Point(516, 326);
+            button3.Location = new Point(521, 380);
             button3.Name = "button3";
             button3.Size = new Size(176, 50);
             button3.TabIndex = 21;
             button3.Text = "Reset";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(140, 0, 200);
             button2.Font = new Font("Microsoft Sans Serif", 12F);
             button2.ForeColor = SystemColors.Window;
-            button2.Location = new Point(260, 326);
+            button2.Location = new Point(265, 380);
             button2.Name = "button2";
             button2.Size = new Size(176, 50);
             button2.TabIndex = 20;
             button2.Text = "Xóa";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(140, 0, 200);
             button1.Font = new Font("Microsoft Sans Serif", 12F);
             button1.ForeColor = SystemColors.Window;
-            button1.Location = new Point(16, 326);
+            button1.Location = new Point(21, 380);
             button1.Name = "button1";
             button1.Size = new Size(176, 50);
             button1.TabIndex = 19;
             button1.Text = "Thêm";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Microsoft Sans Serif", 12F);
-            label11.Location = new Point(327, 244);
+            label11.Location = new Point(342, 303);
             label11.Name = "label11";
             label11.Size = new Size(154, 29);
             label11.TabIndex = 18;
@@ -258,17 +321,17 @@
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(499, 41);
+            numericUpDown1.Location = new Point(183, 233);
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(179, 31);
+            numericUpDown1.Size = new Size(142, 31);
             numericUpDown1.TabIndex = 12;
-            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Microsoft Sans Serif", 12F);
-            label9.Location = new Point(327, 42);
+            label9.Location = new Point(21, 233);
             label9.Name = "label9";
             label9.Size = new Size(109, 29);
             label9.TabIndex = 9;
@@ -276,15 +339,19 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(183, 243);
+            textBox3.Location = new Point(183, 307);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(115, 31);
+            textBox3.Size = new Size(142, 31);
             textBox3.TabIndex = 8;
+            textBox3.TextChanged += textBox3_TextChanged;
+            textBox3.KeyPress += textBox3_KeyPress;
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(499, 241);
+            textBox7.BackColor = SystemColors.Window;
+            textBox7.Location = new Point(552, 302);
             textBox7.Name = "textBox7";
+            textBox7.ReadOnly = true;
             textBox7.Size = new Size(179, 31);
             textBox7.TabIndex = 17;
             // 
@@ -292,7 +359,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 12F);
-            label6.Location = new Point(21, 247);
+            label6.Location = new Point(21, 311);
             label6.Name = "label6";
             label6.Size = new Size(96, 29);
             label6.TabIndex = 7;
@@ -302,7 +369,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Microsoft Sans Serif", 12F);
-            label10.Location = new Point(327, 174);
+            label10.Location = new Point(342, 233);
             label10.Name = "label10";
             label10.Size = new Size(86, 29);
             label10.TabIndex = 16;
@@ -312,7 +379,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 12F);
-            label5.Location = new Point(20, 172);
+            label5.Location = new Point(351, 41);
             label5.Name = "label5";
             label5.Size = new Size(124, 29);
             label5.TabIndex = 5;
@@ -320,32 +387,38 @@
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(499, 170);
+            textBox6.BackColor = SystemColors.Window;
+            textBox6.Location = new Point(552, 233);
             textBox6.Name = "textBox6";
+            textBox6.ReadOnly = true;
             textBox6.Size = new Size(179, 31);
             textBox6.TabIndex = 15;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(183, 174);
+            textBox2.BackColor = SystemColors.Window;
+            textBox2.Location = new Point(552, 43);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(115, 31);
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(179, 31);
             textBox2.TabIndex = 4;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 12F);
-            label7.Location = new Point(327, 100);
+            label7.Location = new Point(342, 159);
             label7.Name = "label7";
-            label7.Size = new Size(160, 29);
+            label7.Size = new Size(204, 29);
             label7.TabIndex = 14;
-            label7.Text = "Nhà cung cấp";
+            label7.Text = "Tên nhà cung cấp";
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(499, 98);
+            textBox5.BackColor = SystemColors.Window;
+            textBox5.Location = new Point(552, 159);
             textBox5.Name = "textBox5";
+            textBox5.ReadOnly = true;
             textBox5.Size = new Size(179, 31);
             textBox5.TabIndex = 13;
             // 
@@ -353,7 +426,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 12F);
-            label4.Location = new Point(20, 100);
+            label4.Location = new Point(15, 101);
             label4.Name = "label4";
             label4.Size = new Size(166, 29);
             label4.TabIndex = 3;
@@ -361,18 +434,22 @@
             // 
             // textBox1
             // 
+            textBox1.BackColor = SystemColors.Window;
             textBox1.Location = new Point(184, 102);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(114, 31);
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(141, 31);
             textBox1.TabIndex = 2;
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(183, 41);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(115, 33);
+            comboBox1.Size = new Size(142, 33);
             comboBox1.TabIndex = 1;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -387,12 +464,38 @@
             // panel4
             // 
             panel4.BackColor = Color.White;
+            panel4.Controls.Add(dataGridView3);
+            panel4.Controls.Add(label15);
             panel4.Controls.Add(label1);
             panel4.Controls.Add(dataGridView1);
             panel4.Location = new Point(3, 12);
             panel4.Name = "panel4";
             panel4.Size = new Size(752, 486);
             panel4.TabIndex = 2;
+            // 
+            // dataGridView3
+            // 
+            dataGridView3.AllowUserToAddRows = false;
+            dataGridView3.AllowUserToDeleteRows = false;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Location = new Point(384, 63);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.ReadOnly = true;
+            dataGridView3.RowHeadersWidth = 62;
+            dataGridView3.Size = new Size(353, 395);
+            dataGridView3.TabIndex = 3;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.FromArgb(140, 0, 200);
+            label15.Font = new Font("Microsoft Sans Serif", 12F);
+            label15.ForeColor = SystemColors.Window;
+            label15.Location = new Point(392, 15);
+            label15.Name = "label15";
+            label15.Size = new Size(244, 29);
+            label15.TabIndex = 2;
+            label15.Text = "Nhà cung cấp hiện có";
             // 
             // label1
             // 
@@ -408,11 +511,14 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(15, 63);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(724, 395);
+            dataGridView1.Size = new Size(363, 395);
             dataGridView1.TabIndex = 0;
             // 
             // FormBuy
@@ -436,6 +542,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -476,5 +583,11 @@
         private Panel panel4;
         private Label label1;
         private DataGridView dataGridView1;
+        private ComboBox comboBox2;
+        private Label label14;
+        private DataGridView dataGridView3;
+        private Label label15;
+        private Label label16;
+        private TextBox textBox10;
     }
 }

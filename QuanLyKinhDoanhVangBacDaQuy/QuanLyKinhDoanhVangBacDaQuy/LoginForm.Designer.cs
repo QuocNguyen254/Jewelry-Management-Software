@@ -64,19 +64,20 @@
             panel1.Controls.Add(btnLogin);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(10, 40);
+            panel1.Location = new Point(12, 50);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(680, 450);
+            panel1.Size = new Size(850, 562);
             panel1.TabIndex = 0;
             // 
             // Login_ShowPass
             // 
             Login_ShowPass.AutoSize = true;
-            Login_ShowPass.Font = new Font("Fz Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Login_ShowPass.Location = new Point(352, 287);
+            Login_ShowPass.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Login_ShowPass.Location = new Point(440, 359);
+            Login_ShowPass.Margin = new Padding(4, 4, 4, 4);
             Login_ShowPass.Name = "Login_ShowPass";
-            Login_ShowPass.Size = new Size(143, 30);
+            Login_ShowPass.Size = new Size(151, 26);
             Login_ShowPass.TabIndex = 6;
             Login_ShowPass.Text = "Hiện mật khẩu";
             Login_ShowPass.UseVisualStyleBackColor = true;
@@ -85,9 +86,10 @@
             // userBoxLog
             // 
             userBoxLog.Image = Properties.Resources.user1;
-            userBoxLog.Location = new Point(295, 26);
+            userBoxLog.Location = new Point(369, 32);
+            userBoxLog.Margin = new Padding(4, 4, 4, 4);
             userBoxLog.Name = "userBoxLog";
-            userBoxLog.Size = new Size(103, 100);
+            userBoxLog.Size = new Size(129, 125);
             userBoxLog.TabIndex = 5;
             userBoxLog.TabStop = false;
             // 
@@ -95,11 +97,12 @@
             // 
             gotoRegister.AutoSize = true;
             gotoRegister.Cursor = Cursors.Hand;
-            gotoRegister.Font = new Font("Fz Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gotoRegister.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             gotoRegister.ForeColor = Color.SlateBlue;
-            gotoRegister.Location = new Point(389, 375);
+            gotoRegister.Location = new Point(486, 469);
+            gotoRegister.Margin = new Padding(4, 0, 4, 0);
             gotoRegister.Name = "gotoRegister";
-            gotoRegister.Size = new Size(73, 26);
+            gotoRegister.Size = new Size(76, 22);
             gotoRegister.TabIndex = 4;
             gotoRegister.Text = "Đăng ký";
             gotoRegister.Click += gotoRegister_Click;
@@ -107,20 +110,22 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Fz Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(234, 375);
+            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(292, 469);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(160, 26);
+            label2.Size = new Size(165, 22);
             label2.TabIndex = 3;
             label2.Text = "Chưa có tài khoản?";
             // 
             // Loginlabel
             // 
             Loginlabel.BackColor = Color.White;
-            Loginlabel.Font = new Font("Fz Poppins", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Loginlabel.Location = new Point(263, 127);
+            Loginlabel.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Loginlabel.Location = new Point(329, 159);
+            Loginlabel.Margin = new Padding(4, 0, 4, 0);
             Loginlabel.Name = "Loginlabel";
-            Loginlabel.Size = new Size(168, 46);
+            Loginlabel.Size = new Size(210, 58);
             Loginlabel.TabIndex = 1;
             Loginlabel.Text = "Đăng nhập";
             Loginlabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -131,12 +136,12 @@
             btnLogin.BackColor = Color.FromArgb(107, 0, 128);
             btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Font = new Font("Fz Poppins SemBd", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(227, 326);
+            btnLogin.Location = new Point(284, 408);
             btnLogin.Margin = new Padding(2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(240, 44);
+            btnLogin.Size = new Size(300, 55);
             btnLogin.TabIndex = 2;
             btnLogin.Text = "Đăng nhập";
             btnLogin.UseVisualStyleBackColor = false;
@@ -146,31 +151,31 @@
             // 
             panel3.Controls.Add(txbPassWord);
             panel3.Controls.Add(labelMatKhau);
-            panel3.Location = new Point(78, 234);
+            panel3.Location = new Point(98, 292);
             panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(496, 55);
+            panel3.Size = new Size(620, 69);
             panel3.TabIndex = 1;
             // 
             // txbPassWord
             // 
             txbPassWord.Cursor = Cursors.IBeam;
             txbPassWord.ForeColor = SystemColors.WindowText;
-            txbPassWord.Location = new Point(141, 14);
+            txbPassWord.Location = new Point(176, 18);
             txbPassWord.Margin = new Padding(2);
             txbPassWord.Name = "txbPassWord";
             txbPassWord.PasswordChar = '•';
-            txbPassWord.Size = new Size(276, 27);
+            txbPassWord.Size = new Size(344, 31);
             txbPassWord.TabIndex = 1;
             // 
             // labelMatKhau
             // 
             labelMatKhau.AutoSize = true;
-            labelMatKhau.Font = new Font("Fz Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelMatKhau.Location = new Point(55, 15);
+            labelMatKhau.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelMatKhau.Location = new Point(69, 19);
             labelMatKhau.Margin = new Padding(2, 0, 2, 0);
             labelMatKhau.Name = "labelMatKhau";
-            labelMatKhau.Size = new Size(82, 26);
+            labelMatKhau.Size = new Size(83, 22);
             labelMatKhau.TabIndex = 0;
             labelMatKhau.Text = "Mật khẩu";
             // 
@@ -178,30 +183,31 @@
             // 
             panel2.Controls.Add(txbUserName);
             panel2.Controls.Add(labelTaiKhoan);
-            panel2.Location = new Point(78, 171);
+            panel2.Location = new Point(98, 214);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(496, 60);
+            panel2.Size = new Size(620, 75);
             panel2.TabIndex = 0;
             // 
             // txbUserName
             // 
             txbUserName.BackColor = SystemColors.Window;
             txbUserName.Cursor = Cursors.IBeam;
-            txbUserName.Location = new Point(141, 20);
+            txbUserName.Location = new Point(176, 25);
             txbUserName.Margin = new Padding(2);
             txbUserName.Name = "txbUserName";
-            txbUserName.Size = new Size(276, 27);
+            txbUserName.Size = new Size(344, 31);
             txbUserName.TabIndex = 0;
+            txbUserName.TextChanged += txbUserName_TextChanged;
             // 
             // labelTaiKhoan
             // 
             labelTaiKhoan.AutoSize = true;
-            labelTaiKhoan.Font = new Font("Fz Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelTaiKhoan.Location = new Point(51, 20);
+            labelTaiKhoan.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelTaiKhoan.Location = new Point(64, 25);
             labelTaiKhoan.Margin = new Padding(2, 0, 2, 0);
             labelTaiKhoan.Name = "labelTaiKhoan";
-            labelTaiKhoan.Size = new Size(86, 26);
+            labelTaiKhoan.Size = new Size(90, 22);
             labelTaiKhoan.TabIndex = 0;
             labelTaiKhoan.Text = "Tài khoản";
             // 
@@ -214,8 +220,9 @@
             panel7.Controls.Add(Exitbutton);
             panel7.Dock = DockStyle.Top;
             panel7.Location = new Point(0, 0);
+            panel7.Margin = new Padding(4, 4, 4, 4);
             panel7.Name = "panel7";
-            panel7.Size = new Size(700, 30);
+            panel7.Size = new Size(875, 37);
             panel7.TabIndex = 9;
             // 
             // Maxmize_btn
@@ -227,9 +234,10 @@
             Maxmize_btn.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Maxmize_btn.ForeColor = SystemColors.ButtonHighlight;
             Maxmize_btn.Image = (Image)resources.GetObject("Maxmize_btn.Image");
-            Maxmize_btn.Location = new Point(627, 0);
+            Maxmize_btn.Location = new Point(784, 0);
+            Maxmize_btn.Margin = new Padding(4, 4, 4, 4);
             Maxmize_btn.Name = "Maxmize_btn";
-            Maxmize_btn.Size = new Size(35, 30);
+            Maxmize_btn.Size = new Size(44, 38);
             Maxmize_btn.TabIndex = 8;
             Maxmize_btn.TabStop = false;
             Maxmize_btn.UseVisualStyleBackColor = false;
@@ -244,9 +252,10 @@
             Minimize_btn.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Minimize_btn.ForeColor = SystemColors.ButtonHighlight;
             Minimize_btn.Image = (Image)resources.GetObject("Minimize_btn.Image");
-            Minimize_btn.Location = new Point(591, -1);
+            Minimize_btn.Location = new Point(739, -1);
+            Minimize_btn.Margin = new Padding(4, 4, 4, 4);
             Minimize_btn.Name = "Minimize_btn";
-            Minimize_btn.Size = new Size(35, 30);
+            Minimize_btn.Size = new Size(44, 38);
             Minimize_btn.TabIndex = 7;
             Minimize_btn.TabStop = false;
             Minimize_btn.UseVisualStyleBackColor = false;
@@ -261,9 +270,10 @@
             Exitbutton.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Exitbutton.ForeColor = SystemColors.ButtonHighlight;
             Exitbutton.Image = (Image)resources.GetObject("Exitbutton.Image");
-            Exitbutton.Location = new Point(663, 0);
+            Exitbutton.Location = new Point(829, 0);
+            Exitbutton.Margin = new Padding(4, 4, 4, 4);
             Exitbutton.Name = "Exitbutton";
-            Exitbutton.Size = new Size(35, 30);
+            Exitbutton.Size = new Size(44, 38);
             Exitbutton.TabIndex = 6;
             Exitbutton.TabStop = false;
             Exitbutton.UseVisualStyleBackColor = false;
@@ -272,10 +282,10 @@
             // LoginForm
             // 
             AcceptButton = btnLogin;
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(96, 0, 128);
-            ClientSize = new Size(700, 500);
+            ClientSize = new Size(875, 625);
             Controls.Add(panel7);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;

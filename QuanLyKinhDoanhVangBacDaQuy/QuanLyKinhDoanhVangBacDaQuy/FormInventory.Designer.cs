@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            comboBox2 = new ComboBox();
+            label1 = new Label();
             comboBox1 = new ComboBox();
             label12 = new Label();
             textBox1 = new TextBox();
@@ -40,6 +42,8 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(comboBox2);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(textBox1);
@@ -50,12 +54,33 @@
             panel1.Size = new Size(1405, 961);
             panel1.TabIndex = 1;
             // 
+            // comboBox2
+            // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(372, 163);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(124, 33);
+            comboBox2.TabIndex = 28;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 12F);
+            label1.Location = new Point(284, 163);
+            label1.Name = "label1";
+            label1.Size = new Size(64, 29);
+            label1.TabIndex = 27;
+            label1.Text = "Năm";
+            // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(130, 163);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(183, 33);
+            comboBox1.Size = new Size(124, 33);
             comboBox1.TabIndex = 26;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -83,12 +108,15 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(42, 246);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(1314, 628);
             dataGridView1.TabIndex = 0;
@@ -120,5 +148,7 @@
         private DataGridView dataGridView1;
         private Label label12;
         private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private Label label1;
     }
 }

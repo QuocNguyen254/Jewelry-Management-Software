@@ -17,7 +17,7 @@ namespace QuanLyKinhDoanhVangBacDaQuy
         FormSell fSell;
         FormBuy fBuy;
         FormService fService;
-        FormSearch fSearch;
+        FormListServiceReceipt fSearch;
         FormInventory fInventory;
         FormDashboard fDashboard;
         public fManager()
@@ -237,7 +237,7 @@ namespace QuanLyKinhDoanhVangBacDaQuy
         {
             if (fSearch == null)
             {
-                fSearch = new FormSearch();
+                fSearch = new FormListServiceReceipt();
                 fSearch.FormClosed += fSearch_FormClosed;
                 fSearch.MdiParent = this;
                 fSearch.Dock = DockStyle.Fill;

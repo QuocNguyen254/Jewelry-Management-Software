@@ -74,5 +74,10 @@ namespace QuanLyKinhDoanhVangBacDaQuy
             txbPassWord.UseSystemPasswordChar = false;
             txbPassWord.PasswordChar = Login_ShowPass.Checked ? '\0' : '•';
         }
+
+        private void txbUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
